@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Juego de Preguntas</title>
+
+	
+	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script type="text/javascript">
+
+	//var name = prompt("Cual es tu nombre")
+	var ganaste1 = 0;
+    var ganaste2 = 0;
+    var ganaste3 = 0;
+    var ganaste4 = 0;
+    var ganaste5 = 0;
+    var ganaste6 = 0;
+    var ganaste7 = 0;
+	var contador = 0;
+	var peru = "lima"	
+	var autralia = "sydney"	
+	
+	var win = "ganaste"
+	 
+
+	function respuesta1 () {
+		var capital = document.getElementById('data1').value;
+		if (capital == "lima" && ganaste1 < 2)
+		{			
+			document.getElementById('resp_1').innerHTML= "Correcto "
+			contador += 20;
+			ganaste1 = 1;	
+		    document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('question1').removeChild(data1)
+		} 
+			   if (capital != "lima" && ganaste1 < 2) ///condicion
+			      { contador -= 10;
+		           ganaste1 += 1;	
+		           document.getElementById('nombre').innerHTML=contador;
+			       document.getElementById('resp_1').innerHTML= "Burro "
+			       if (ganaste1 == 2){
+			       	document.getElementById('question1').removeChild(data1)
+			       }	
+			   }    	   	
+			
+		resultado()
+	}
+
+	function respuesta2 (){
+		var cap_2 = document.getElementById('data2').value
+		if (cap_2 =="sydney" && ganaste2 <2) {
+			document.getElementById('resp_2').innerHTML="Correcto"
+			contador += 20;
+            ganaste2 = 1;
+			document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('question2').removeChild(data2) 
+		} if (cap_2 != "sydney" && ganaste2 <2){
+			contador -= 10;
+			ganaste2 +=1
+			document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('resp_2').innerHTML="Burro"
+			if(ganaste2 == 2){
+				document.getElementById('question2').removeChild(data2) 
+			}
+		};
+		resultado()
+	}
+
+	function respuesta3 (){
+		var cap3 = document.getElementById('data3').value
+		if (cap3 == "roma" && ganaste3 <2) {
+			document.getElementById('resp_3').innerHTML="Correcto"
+			contador += 20;
+            ganaste3 = 1;
+			document.getElementById('nombre').innerHTML=contador;	
+			document.getElementById('question3').removeChild(data3) 		
+		} if(cap3 != "roma" && ganaste3 < 2){
+			contador -= 10;
+			ganaste3 +=1
+			document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('resp_3').innerHTML="Burro"
+			if (ganaste3 == 2 ){
+				document.getElementById('question3').removeChild(data3)
+			}
+		};
+		resultado()
+	}
+	function respuesta4 () {
+		var cap4 = document.getElementById('data4').value;
+		if (cap4 == "oslo" && ganaste1 < 2)
+		{			
+			document.getElementById('resp_4').innerHTML= "Correcto "
+			contador += 20;
+			ganaste4 = 1;	
+		    document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('question4').removeChild(data4)
+		} 
+			   if (cap4 != "oslo" && ganaste4 < 2) ///condicion
+			      { contador -= 10;
+		           ganaste4 += 1;	
+		           document.getElementById('nombre').innerHTML=contador;
+			       document.getElementById('resp_4').innerHTML= "Burro "
+			       if (ganaste4 == 1){alert("AYUDA : empieza con O ... y termina con O")};
+			       if (ganaste4 == 2){
+			       	document.getElementById('question4').removeChild(data4)
+			       }	
+			   }    	   	
+			
+		resultado()
+	}
+
+	function respuesta5 () {
+		var cap5 = document.getElementById('data5').value;
+		if (cap5 == "tunez" && ganaste5 < 2)
+		{			
+			document.getElementById('resp_5').innerHTML= "Correcto "
+			contador += 20;
+			ganaste5 = 1;	
+		    document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('question5').removeChild(data5)
+		} 
+			   if (cap5 != "tunez" && ganaste5 < 2) ///condicion
+			      { contador -= 10;
+		           ganaste5 += 1;	
+		           document.getElementById('nombre').innerHTML=contador;
+			       document.getElementById('resp_5').innerHTML= "Burro "
+			       if (ganaste5 == 1){alert("AYUDA : la capital es muy parecida al pais") };
+			       if (ganaste5 == 2){
+			       	document.getElementById('question5').removeChild(data5)
+			       }	
+			   }    	   	
+			
+		resultado()
+	}
+
+	function respuesta6 () {
+		var cap6 = document.getElementById('data6').value;
+		if (cap6 == "kingston" && ganaste6 < 2)
+		{			
+			document.getElementById('resp_6').innerHTML= "Correcto "
+			contador += 20;
+			ganaste6 = 1;	
+		    document.getElementById('nombre').innerHTML=contador;
+			document.getElementById('question6').removeChild(data6)
+		} 
+			   if (cap6 != "kingston" && ganaste6 < 2) ///condicion
+			      { contador -= 10;
+		           ganaste6 += 1;	
+		           document.getElementById('nombre').innerHTML=contador;
+			       document.getElementById('resp_6').innerHTML= "Burro "
+			       if (ganaste6 == 1){alert("AYUDA : tiene nombre de memoria ram")}
+			       if (ganaste6 == 2){
+			       	document.getElementById('question6').removeChild(data6)
+			       }	
+			   }    	   	
+			
+		resultado()
+	}
+
+
+	
+
+	function resultado () {
+	
+	 if (contador == 100){
+		document.getElementById('campeon').innerHTML= "ganaste !!!! Ahora la pregunta final !!!" +"<br>"
+		var btn = document.createElement("BUTTON");
+        var t = document.createTextNode("Pregunta final");
+        btn.appendChild(t);
+        document.getElementById('campeon').appendChild(btn)
+        btn.onclick = function mostrar () {
+        	document.getElementById('question7').style.opacity = '1'
+        } 
+		}
+	}
+	resultado()
+
+	function respuesta7 (){
+		var cap7 = document.getElementById('data7').value
+		if (cap7 == "hanoi") {
+			document.write("<h1 style='font-size:350;align:center'>  GANASTE !! </h1>")
+			//document.getElementById('resp_7').innerHTML="Ganaste el juego"	
+			document.getElementById('question7').removeChild(data7) 		
+		} if(cap7 != "hanoi"){
+			document.write("<h1 style='font-size:350;align:center'>  PERDISTE !! </h1>")
+			//document.getElementById('resp_7').innerHTML="Perdiste el juego"
+			document.getElementById('question7').removeChild(data7)
+			}
+	};
+		
+	
+
+
+	</script>
+<style>
+		#header {
+	font-family: Verdana;
+	font-size: 15px;
+	text-align: center;
+	border-radius: 30px;
+	border: solid blue;
+	margin-top: 0px;
+	margin-bottom: 10px;
+			}
+		#contenedor{
+			display:flex;
+			align-items:center;
+
+			}
+			
+		div {
+			width: 300px;
+			
+			}
+		.question{
+			float: left;
+			display: inline-block;
+			position: static;
+			margin: 70px;
+			}	
+		
+			
+		h1 {
+			
+			font-family: Impact;
+			color: blue;
+			font-size: 60px;
+			padding-bottom: 2px;
+			padding-left: inherit;
+			padding-right: inherit;
+			padding-top: 2px;
+			margin-bottom: 0px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 0px;
+			}	
+		p{
+			
+	font-size: 40px;
+	padding-bottom: 2px;
+	padding-left: inherit;
+	padding-right: inherit;
+	padding-top: 2px;
+	margin:auto;
+			}	
+			
+	.respuestas{
+		color:#F00;
+		
+		}
+	#puntaje{
+		font-size:30px;
+		border-style:solid;
+		border-radius:30px;
+		padding:10px;
+		
+		}
+	.points{
+	
+		border-color:#F00;
+		border-width:60px;
+		
+		
+		}	
+	#nombre{
+		color:#F00;
+		font-size:30px;
+		
+		}
+
+	#campeon{
+		text-align: center;
+		font-size: 80px;
+	}
+	#question7 {
+		opacity:0;
+		margin-left:500px;
+		width: 500px;
+	}
+
+</style>
+
+
+
+
+</head>
+<body>
+<header id="header" class="">
+	<h1>Juego de preguntas</h1>
+	
+</header><!-- /header -->
+<div class="points">
+	<p id="puntaje">Puntos : <span id="nombre"></span></p>
+</div>
+<section id="contenedor">
+
+<div id="question1" class="question">
+	<h1>Pregunta 1</h1>
+	<img src="http://www.embajadaperu.com.sv/img/bandera.jpg" width="200" height="150">
+	<p>  Cual es la capital de peru </p>
+	<input type="text"  id="data1" >
+	<input type="button" onclick="respuesta1()" name="" value="respuesta">
+	<p id="resp_1" class="respuestas"></p>
+</div>
+
+<div id="question2" class="question">
+	<h1>Pregunta 2</h1>
+	<img src="http://www.banderas-mundo.es/data/flags/ultra/au.png" width="200" height="150">
+	<p>Cual es la capital de australia ?</p>
+	<input type="text" id="data2" value="" placeholder="">
+	<input type="button" onclick="respuesta2()" name="" value="respuesta">
+	<p id="resp_2" class="respuestas"></p>
+</div>
+<div id="question3" class="question">
+	
+    <h1>Pregunta 3</h1>
+    <img src="http://www.banderas-mundo.es/data/flags/ultra/it.png" width="200" height="150">
+	<p>Cual es la capital de italia ?</p>
+	<input type="text" id="data3" value="" placeholder="">
+	<input type="button" onclick="respuesta3()" name="" value="respuesta">
+	<p id="resp_3" class="respuestas"></p>
+</div>
+
+</section>
+<!-- aca empieza las nuevas preguntas -->
+<section>
+	<div id="question4" class="question">
+	<h1>Pregunta 4</h1>
+	<img src="http://www.banderas-mundo.es/data/flags/ultra/no.png" width="200" height="150">
+	<p>  Cual es la capital de noruega </p>
+	<input type="text"  id="data4" >
+	<input type="button" onclick="respuesta4()" name="" value="respuesta">
+	<p id="resp_4" class="respuestas"></p>
+</div>
+
+<div id="question5" class="question">
+	<h1>Pregunta 5</h1>
+	<img src="http://www.worldflags.es/imagenes/banderas/490p_TUNEZ.JPG" width="200" height="150">
+	<p>Cual es la capital de tunez ?</p>
+	<input type="text" id="data5" value="" placeholder="">
+	<input type="button" onclick="respuesta5()" name="" value="respuesta">
+	<p id="resp_5" class="respuestas"></p>
+</div>
+
+<div id="question6" class="question">
+	
+    <h1>Pregunta 6</h1>
+    <img src="http://www.banderas-mundo.es/data/flags/ultra/jm.png" width="200" height="150">
+	<p>Cual es la capital de jamaica ?</p>
+	<input type="text" id="data6" value="" placeholder="">
+	<input type="button" onclick="respuesta6()" name="" value="respuesta">
+	<p id="resp_6" class="respuestas"></p>
+</div>
+</section>
+<section>
+	
+<div id="question7" class="question">
+	
+    <h1>Pregunta Final</h1>
+    <img src="http://www.banderas-mundo.es/data/flags/big/vn.png" width="200" height="150">
+	<p>Cual es la capital de vietnam ?</p>
+	<input type="text" id="data7" value="" placeholder="">
+	<input type="button" onclick="respuesta7()" name="" value="respuesta">
+	<p id="resp_7" class="respuestas"></p>	
+</div>
+</section>
+<p id="campeon"></p>
+
+
+</body>
+</html>
